@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
             }
 
             ///chodzenie
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if(Input.GetAxisRaw("Horizontal") < 0)//(Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = walkingRightBunny;
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
 
         ///chodzenie
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetAxisRaw("Horizontal") > 0) //(Input.GetKeyDown(KeyCode.RightArrow))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
             this.gameObject.GetComponent<SpriteRenderer>().sprite = walkingRightBunny;
